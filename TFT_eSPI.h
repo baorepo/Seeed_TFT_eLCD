@@ -101,7 +101,7 @@
 #include <Arduino.h>
 #include <Print.h>
 
-#include <pgmspace.h>
+ 
 
 #include <SPI.h>
 
@@ -599,8 +599,8 @@ int16_t tch_spi_freq;
 
 // Create a null set in case some fonts not used (to prevent crash)
 const  uint8_t widtbl_null[1] = {0};
-PROGMEM const uint8_t chr_null[1] = {0};
-PROGMEM const uint8_t* const chrtbl_null[1] = {chr_null};
+ const uint8_t chr_null[1] = {0};
+ const uint8_t* const chrtbl_null[1] = {chr_null};
 
 typedef struct {
     const uint8_t *chartbl;
@@ -610,7 +610,7 @@ typedef struct {
     } fontinfo;
 
 // Now fill the structure
-const PROGMEM fontinfo fontdata [] = {
+const  fontinfo fontdata [] = {
   #ifdef LOAD_GLCD
    { (const uint8_t *)font, widtbl_null, 0, 0 },
   #else
